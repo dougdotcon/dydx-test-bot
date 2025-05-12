@@ -1,0 +1,595 @@
+2025-05-10 15:47:04,529 - src.bot - INFO - Iniciando bot de trading...
+2025-05-10 15:47:05,197 - src.market_data - ERROR - Erro ao conectar: server rejected WebSocket connection: HTTP 501
+2025-05-10 15:47:05,198 - src.bot - ERROR - Erro ao iniciar bot: server rejected WebSocket connection: HTTP 501
+2025-05-10 15:47:05,198 - src.bot - INFO - Parando bot...
+2025-05-10 15:47:05,200 - src.market_data - INFO - Conexões fechadas
+2025-05-10 15:47:05,200 - src.bot - INFO - Bot parado
+2025-05-10 15:48:17,697 - src.bot - INFO - Iniciando bot de trading...
+2025-05-10 15:48:18,632 - src.api_client - ERROR - Erro ao obter trades: 404
+2025-05-10 15:48:18,632 - src.market_data - INFO - Conectado à API da dYdX para ETH-USD
+2025-05-10 15:48:18,633 - src.bot - INFO - Bot iniciado com sucesso
+2025-05-10 15:48:18,927 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:48:24,226 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:48:29,545 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:48:30,571 - src.bot - INFO - Loop principal cancelado
+2025-05-10 15:48:30,598 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000196E11DC2E0>
+2025-05-10 15:48:30,600 - asyncio - ERROR - Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x00000196E124DF00>, 141783.0)])']
+connector: <aiohttp.connector.TCPConnector object at 0x00000196E1159A80>
+2025-05-10 15:48:30,601 - asyncio - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x00000196E1159390>
+transport: <_ProactorSocketTransport fd=1868 read=<_OverlappedFuture cancelled>>
+Traceback (most recent call last):
+  File "C:\Users\Douglas\AppData\Local\Programs\Python\Python310\lib\asyncio\sslproto.py", line 684, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Douglas\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 361, in write
+    self._loop_writing(data=bytes(data))
+  File "C:\Users\Douglas\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 397, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+AttributeError: 'NoneType' object has no attribute 'send'
+2025-05-10 15:50:38,324 - src.bot - INFO - Iniciando bot de trading...
+2025-05-10 15:50:39,299 - src.api_client - ERROR - Erro ao obter trades: 404
+2025-05-10 15:50:39,302 - src.market_data - INFO - Conectado à API da dYdX para ETH-USD
+2025-05-10 15:50:39,302 - src.bot - INFO - Bot iniciado com sucesso
+2025-05-10 15:50:39,603 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:50:44,924 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:50:50,226 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:50:55,531 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:51:00,843 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:51:06,163 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:51:11,473 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:51:16,784 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:51:22,098 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:51:27,404 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:51:32,714 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:51:38,029 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:51:43,331 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:51:48,638 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:51:53,934 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:51:59,243 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:52:04,563 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:52:09,873 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:52:15,175 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:52:20,484 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:52:25,791 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:52:31,112 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:52:36,429 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:52:41,744 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:52:47,052 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:52:52,393 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:52:57,730 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:53:03,045 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:53:08,345 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:53:13,650 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:53:18,951 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:53:24,250 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:53:29,564 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:53:34,862 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:53:40,171 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:53:45,479 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:53:50,808 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:53:56,116 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:54:01,433 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:54:06,758 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:54:12,074 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:54:17,385 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:54:22,699 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:54:28,029 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:54:33,351 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:54:38,668 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:54:43,981 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:54:49,300 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:54:54,597 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:54:59,919 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:55:05,237 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:55:10,545 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:55:15,862 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:55:21,168 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:55:26,498 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:55:31,811 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:55:37,121 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:55:42,439 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:55:47,744 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:55:53,065 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:55:58,395 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:56:03,720 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:56:09,023 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:56:14,343 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:56:19,652 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:56:24,960 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:56:30,289 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:56:35,608 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:56:40,909 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:56:46,198 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:56:51,521 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:56:56,858 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:57:02,157 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:57:07,468 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:57:12,768 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:57:18,076 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:57:23,385 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:57:28,693 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:57:34,007 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:57:39,321 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:57:44,637 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:57:49,950 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:57:55,263 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:58:00,591 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:58:05,897 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:58:11,202 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:58:16,511 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:58:21,852 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:58:27,220 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:58:32,524 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:58:37,845 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:58:43,188 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:58:48,488 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:58:53,810 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:58:59,101 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:59:04,410 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:59:09,705 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:59:15,015 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:59:20,323 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:59:25,633 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:59:30,951 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:59:36,247 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:59:41,548 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:59:46,861 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:59:52,169 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:59:57,485 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 15:59:59,641 - src.bot - INFO - Loop principal cancelado
+2025-05-10 15:59:59,642 - src.bot - INFO - Parando bot...
+2025-05-10 15:59:59,642 - src.bot - INFO - Bot parado
+2025-05-10 15:59:59,644 - src.market_data - INFO - Conexões fechadas
+2025-05-10 16:01:16,347 - src.bot - INFO - Iniciando bot de trading...
+2025-05-10 16:01:20,272 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:01:20,273 - src.market_data - INFO - Conectado à API da dYdX para ETH-USD
+2025-05-10 16:01:20,273 - src.bot - INFO - Bot iniciado com sucesso
+2025-05-10 16:01:20,274 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:01:29,259 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:01:38,247 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:01:47,234 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:01:56,220 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:02:05,208 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:02:14,195 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:02:23,183 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:02:32,169 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:02:41,156 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:02:50,145 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:02:59,138 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:03:08,117 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:03:17,106 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:03:26,091 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:03:35,078 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:03:44,069 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:03:53,053 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:04:02,042 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:04:11,029 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:04:20,014 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:04:29,001 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:04:37,992 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:04:46,978 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:04:55,962 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:05:04,949 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:05:13,936 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:05:22,923 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:05:31,910 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:05:40,910 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:05:49,884 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:05:58,880 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:06:07,860 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:06:16,845 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:06:25,832 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:06:34,820 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:06:43,806 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:06:52,793 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:07:01,794 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:07:10,768 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:07:19,755 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:07:28,742 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:07:37,740 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:07:46,715 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:07:55,703 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:08:04,692 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:08:13,677 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:08:22,668 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:08:31,655 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:08:40,638 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:08:49,638 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:08:58,615 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:09:07,832 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:09:16,587 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:09:25,574 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:09:34,561 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:09:43,548 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:09:52,546 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:10:01,522 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:10:10,509 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:10:19,496 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:10:28,483 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:10:37,475 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:10:46,457 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:10:55,444 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:11:04,434 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:11:13,419 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:11:22,405 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:11:31,394 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:11:40,380 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:11:49,366 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:11:58,354 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:12:07,342 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:12:16,328 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:12:25,320 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:12:34,301 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:12:43,289 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:12:52,275 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:13:01,263 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:13:10,251 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:13:19,237 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:13:28,224 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:13:37,213 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:13:46,198 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:13:55,190 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:14:04,177 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:14:13,160 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:14:22,146 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:14:31,135 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:14:40,120 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:14:49,123 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:14:58,121 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:15:07,096 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:15:16,078 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:15:25,067 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:15:34,052 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:15:43,039 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:15:52,033 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:16:01,014 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host indexer.v4-testnet.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:16:09,714 - src.bot - INFO - Loop principal cancelado
+2025-05-10 16:16:09,715 - src.bot - INFO - Parando bot...
+2025-05-10 16:16:09,715 - src.bot - INFO - Bot parado
+2025-05-10 16:16:09,715 - src.market_data - INFO - Conexões fechadas
+2025-05-10 16:16:53,143 - src.bot - INFO - Iniciando bot de trading...
+2025-05-10 16:16:54,519 - src.api_client - ERROR - Erro ao obter trades: 404
+2025-05-10 16:16:54,520 - src.market_data - INFO - Conectado à API da dYdX para ETH-USD
+2025-05-10 16:16:54,520 - src.bot - INFO - Bot iniciado com sucesso
+2025-05-10 16:16:54,832 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 16:17:00,146 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 16:17:05,469 - src.api_client - ERROR - Erro ao obter dados do mercado: 404
+2025-05-10 16:17:07,356 - src.bot - INFO - Loop principal cancelado
+2025-05-10 16:17:07,356 - src.bot - INFO - Parando bot...
+2025-05-10 16:17:07,357 - src.bot - INFO - Bot parado
+2025-05-10 16:17:07,357 - src.market_data - INFO - Conexões fechadas
+2025-05-10 16:18:31,124 - src.bot - INFO - Iniciando bot de trading...
+2025-05-10 16:18:34,793 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:18:34,793 - src.market_data - INFO - Conectado à API da dYdX para ETH-USD
+2025-05-10 16:18:34,794 - src.bot - INFO - Bot iniciado com sucesso
+2025-05-10 16:18:34,796 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:18:43,779 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:18:52,767 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:19:01,758 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:19:10,741 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:19:19,728 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:19:28,717 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:19:37,702 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:19:46,689 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:19:55,679 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:20:04,663 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:20:13,667 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:20:22,638 - src.api_client - ERROR - Erro na requisição API: Cannot connect to host api.stage.dydx.exchange:443 ssl:default [getaddrinfo failed]
+2025-05-10 16:20:24,209 - src.bot - INFO - Loop principal cancelado
+2025-05-10 16:20:24,209 - src.bot - INFO - Parando bot...
+2025-05-10 16:20:24,210 - src.bot - INFO - Bot parado
+2025-05-10 16:20:24,210 - src.market_data - INFO - Conexões fechadas
+2025-05-10 16:22:16,768 - src.bot - INFO - Iniciando bot de trading...
+2025-05-10 16:22:17,531 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:22:17,532 - src.market_data - INFO - Conectado à API da dYdX para ETH-USD
+2025-05-10 16:22:17,532 - src.bot - INFO - Bot iniciado com sucesso
+2025-05-10 16:22:18,192 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:22:23,887 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:22:29,512 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:22:35,288 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:22:40,986 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:22:46,611 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:22:51,945 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:22:57,572 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:23:03,303 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:23:09,137 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:23:14,624 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:23:19,988 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:23:25,365 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:23:30,887 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:23:36,534 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:23:42,154 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:23:47,887 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:23:53,504 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:23:59,110 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:24:04,770 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:24:10,150 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:24:15,478 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:24:20,815 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:24:26,522 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:24:32,213 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:24:37,881 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:24:43,539 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:24:49,214 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:24:54,637 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:25:00,261 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:25:05,948 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:25:11,554 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:25:16,893 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:25:22,502 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:25:28,121 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:25:33,476 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:25:39,227 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:25:44,867 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:25:50,538 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:25:55,900 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:26:01,538 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:26:07,160 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:26:12,792 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:26:18,421 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:26:24,045 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:26:29,401 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:26:34,806 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:26:40,440 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:26:46,065 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:26:51,706 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:26:57,328 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:27:02,950 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:27:08,350 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:27:13,987 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:27:19,617 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:27:25,263 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:27:30,881 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:27:36,278 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:27:41,645 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:27:47,297 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:27:52,938 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:27:58,643 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:28:04,287 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:28:09,910 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:28:15,553 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:28:21,159 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:28:26,795 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:28:32,463 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:28:38,125 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:28:43,801 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:28:49,428 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:28:55,059 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:29:00,383 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:29:06,152 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:29:11,853 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:29:17,223 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:29:23,082 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:29:28,926 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:29:34,337 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:29:39,989 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:29:45,383 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:29:51,033 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:29:56,722 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:30:02,438 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:30:08,087 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:30:13,768 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:30:19,185 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:30:24,878 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:30:30,501 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:30:36,119 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:30:41,470 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:30:47,148 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:30:52,518 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:30:58,185 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:31:03,878 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:31:09,483 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:31:15,148 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:31:20,748 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:31:26,373 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:31:32,008 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:31:37,639 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:31:43,344 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:31:48,976 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:31:54,326 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:31:59,675 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:32:05,543 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:32:11,250 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:32:16,872 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:32:22,507 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:32:28,139 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:32:33,764 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:32:39,394 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:32:44,749 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:32:50,223 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:32:55,640 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:33:01,313 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:33:06,656 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:33:12,340 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:33:17,994 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:33:23,413 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:33:29,151 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:33:34,899 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:33:40,634 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:33:46,256 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:33:51,603 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:33:56,940 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:34:02,598 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:34:08,248 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:34:13,658 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:34:19,277 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:34:24,941 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:34:30,575 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:34:36,211 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:34:41,858 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:34:47,237 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:34:52,674 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:34:58,410 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:35:04,052 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:35:09,675 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:35:15,283 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:35:20,608 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:35:26,353 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:35:32,066 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:35:37,711 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:35:43,094 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:35:48,718 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:35:54,414 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:36:00,211 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:36:05,861 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:36:11,525 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:36:17,181 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:36:22,895 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:36:28,612 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:36:34,227 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:36:39,573 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:36:45,235 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:36:50,613 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:36:56,251 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:37:01,869 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:37:07,610 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:37:13,279 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:37:18,945 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:37:24,622 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:37:29,979 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:37:35,331 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:37:40,999 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:37:46,584 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:37:52,221 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:37:57,826 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:38:03,249 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:38:08,603 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:38:14,238 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:38:19,977 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:38:25,626 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:38:30,982 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:38:36,384 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:38:42,113 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:38:47,773 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:38:53,378 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:38:58,980 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:39:04,310 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:39:09,970 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:39:15,650 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:39:21,318 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:39:27,075 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:39:32,655 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:39:37,982 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:39:43,588 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:39:48,928 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:39:54,532 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:40:00,229 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:40:06,023 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:40:11,389 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:40:17,034 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:40:22,706 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:40:28,340 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:40:33,986 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:40:39,311 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:40:44,637 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:40:50,311 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:40:55,964 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:41:01,592 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:41:07,193 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:41:12,935 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:41:18,273 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:41:23,895 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:41:29,499 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:41:35,211 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:41:40,544 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:41:46,162 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:41:51,802 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:41:57,148 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:42:02,771 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:42:08,367 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:42:13,980 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:42:19,597 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:42:25,246 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:42:30,868 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:42:36,499 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:42:42,114 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:42:47,736 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:42:53,357 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:42:59,025 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:43:04,694 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:43:10,082 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:43:15,686 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:43:21,511 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:43:26,873 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:43:32,492 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:43:38,123 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:43:43,467 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:43:49,071 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:43:54,411 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:44:00,107 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:44:05,734 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:44:11,064 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:44:16,682 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:44:22,303 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:44:27,918 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:44:33,261 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:44:38,899 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:44:44,492 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:44:50,118 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:44:55,744 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:45:01,369 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:45:07,000 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:45:12,602 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:45:18,215 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:45:23,813 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:45:29,407 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:45:35,024 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:45:40,659 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:45:46,310 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:45:51,637 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:45:57,245 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:46:02,601 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:46:08,353 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:46:13,989 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:46:19,584 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:46:25,186 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:46:30,804 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:46:36,152 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:46:41,507 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:46:47,148 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:46:52,946 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:46:58,575 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:47:04,188 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:47:09,808 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:47:15,167 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:47:20,795 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:47:26,454 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:47:32,047 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:47:37,689 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:47:43,316 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:47:48,969 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:47:54,628 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:48:00,302 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:48:05,927 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:48:11,260 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:48:16,867 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:48:22,505 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:48:28,121 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:48:33,445 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:48:39,105 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:48:44,724 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:48:50,067 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:48:55,736 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:49:01,369 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:49:06,699 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:49:12,034 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:49:17,645 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:49:23,313 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:49:28,657 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:49:34,280 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:49:39,958 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:49:45,576 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:49:51,206 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:49:56,815 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:50:02,426 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:50:07,782 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:50:13,109 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:50:18,690 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:50:24,009 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:50:29,346 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:50:34,988 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:50:40,618 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:50:46,221 - src.api_client - ERROR - Erro na requisição: 404 - 
+2025-05-10 16:50:51,831 - src.api_client - ERROR - Erro na requisição: 404 - 
