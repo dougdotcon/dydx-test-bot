@@ -1,154 +1,171 @@
-# Bot de Trading dYdX v4 (Testnet)
+# dYdX v4 Trading Bot
 
-## Introdução
+A modular, extensible trading bot for the dYdX v4 protocol (testnet), implementing a breakout strategy with volume confirmation.
 
-Este projeto implementa um bot de trading automatizado para a dYdX v4 (testnet). O bot monitora o mercado, detecta possíveis breakouts (baseado em preço e anomalia de volume) e executa ordens de compra (buy) via API REST. O projeto é modular, extensível e segue as melhores práticas de desenvolvimento (logging, tratamento de erros, CLI, etc).
+## Overview
 
-## Requisitos
+This project implements an automated trading bot for dYdX v4 (testnet). The bot monitors the market, detects potential breakouts (based on price and volume anomalies), and executes buy orders via the REST API. The project follows a modular architecture and best development practices (logging, error handling, CLI, etc.).
 
-- Python 3.8 (ou superior)
-- Pip (gerenciador de pacotes)
-- Conta na dYdX v4 (testnet) (para operar em ambiente de teste)
-- (Opcional) Mnemônico (ou chave privada) para autenticação (caso a API exija)
+## Key Features
 
-## Instalação
+- Real-time market data monitoring via WebSocket and REST API
+- Breakout trading strategy with volume confirmation
+- Risk management with configurable position sizing
+- Simulation mode for testing without placing real orders
+- Comprehensive logging and trade history
+- Modular architecture for easy extension
 
-1. Clone o repositório:
+## Requirements
+
+- Python 3.8 or higher
+- pip (package manager)
+- dYdX v4 testnet account
+- (Optional) Mnemonic for authentication (if required by the API)
+
+## Quick Start
+
+1. **Clone the repository:**
    ```bash
-   git clone <url-do-repositório>
-   cd <nome-do-diretório>
+   git clone https://github.com/yourusername/dydx_automate.git
+   cd dydx_automate
    ```
 
-2. Crie um ambiente virtual (recomendado) e ative-o:
-   - **Windows:**
+2. **Create a virtual environment (recommended):**
+   - Windows:
      ```bash
      python -m venv venv
-     venv\Scripts\Activate.ps1
+     venv\Scripts\activate
      ```
-   - **Linux/Mac:**
+   - Linux/macOS:
      ```bash
      python -m venv venv
      source venv/bin/activate
      ```
 
-3. Instale as dependências:
+3. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-## Configuração
+4. **Set up environment variables:**
+   ```bash
+   cp config/.env.example config/.env
+   ```
+   Edit `config/.env` and add your dYdX testnet mnemonic.
 
-O bot utiliza um arquivo de configuração (`config/config.json`) para definir parâmetros de rede, endpoints, estratégia, trading, logging, etc. Exemplo de configuração:
+5. **Run the setup command:**
+   ```bash
+   python cli.py setup
+   ```
+
+6. **Start the bot:**
+   ```bash
+   python cli.py start --simulation
+   ```
+
+## Project Structure
+
+The bot follows a modular architecture with clear separation of concerns:
+
+```
+dydx_automate/
+├── config/                 # Configuration files
+├── docs/                   # Documentation
+├── logs/                   # Log files
+├── src/                    # Source code
+│   ├── clients/            # API clients
+│   ├── core/               # Core functionality
+│   ├── models/             # Data models
+│   ├── strategies/         # Trading strategies
+│   └── utils/              # Utility functions
+├── tests/                  # Test suite
+├── cli.py                  # Command-line interface
+└── requirements.txt        # Dependencies
+```
+
+## Configuration
+
+The bot is configured using the `config/config.json` file. Example configuration:
 
 ```json
 {
-  "network": {
-    "endpoints": {
-      "rest": "https://api.dydx.exchange (ou endpoint da testnet)",
-      "ws": "wss://indexer.dydx.exchange (ou endpoint da testnet)"
-    }
-  },
   "trading": {
     "market": "ETH-USD",
-    "volume_factor": 1.5,
-    "risk_reward_ratio": 2.0
+    "timeframe": "5m",
+    "volume_factor": 2.5,
+    "risk_reward_ratio": 3.0
   },
-  "logging": {
-    "level": "INFO",
-    "file": "bot.log"
+  "risk": {
+    "max_position_size": 0.1,
+    "max_risk_per_trade": 0.02
   },
-  "debug": {
-    "ssl_verify": true
+  "network": {
+    "endpoints": {
+      "rest": "https://dydx-testnet-rpc.polkachu.com",
+      "ws": "wss://dydx-testnet-rpc.polkachu.com/websocket"
+    }
+  },
+  "execution": {
+    "simulation_mode": true
   }
 }
 ```
 
-**Observação:**  
-- Ajuste o endpoint para a testnet (ou produção) conforme necessário.
-- Se a API exigir autenticação, adicione a mnemonic (ou chave) em um arquivo `.env` (nunca em logs ou no código).
+## Command-Line Interface
 
-## Execução
-
-Para iniciar o bot, execute o módulo principal:
+The bot provides a command-line interface for easy control:
 
 ```bash
-python -m src.bot
+# Start the bot
+python cli.py start
+
+# Start with specific options
+python cli.py start --market ETH-USD --volume-factor 2.5 --simulation
+
+# Check market status
+python cli.py status ETH-USD
+
+# Show bot version
+python cli.py version
+
+# Set up the environment
+python cli.py setup
 ```
 
-O bot inicia o loop principal, monitora o mercado e, ao detectar um breakout (preço acima da resistência e volume anômalo), envia uma ordem de compra (buy) via API.  
-O resultado da ordem (sucesso ou erro) é registrado no log (`bot.log`).
+## Documentation
 
-## Estrutura de Arquivos e Módulos
+Comprehensive documentation is available in the `docs` directory:
 
-- **`src/`**  
-  - **`bot.py`:** Loop principal, integração dos módulos e execução do bot.  
-  - **`market_data.py`:** Coleta e analisa dados de mercado (preço, volume, resistência).  
-  - **`execution.py`:** Envio de ordens (compra/venda) via API.  
-  - **`api_client.py`:** Cliente HTTP (aiohttp) para comunicação com a API dYdX.  
-  - **`utils.py`:** Funções auxiliares (logging, carregamento de configuração, validação).  
-  - **`strategy.py`:** (Pendente) Centralização da lógica de estratégia.  
-  - **`monitor.py`:** (Pendente) Monitoramento de posições abertas e SL/TP.
+- [Getting Started](docs/guides/getting-started.md): Quick start guide
+- [Configuration](docs/guides/configuration.md): Detailed configuration information
+- [Trading Strategies](docs/guides/strategies.md): Available trading strategies
+- [API Reference](docs/api/README.md): dYdX v4 API reference
+- [Development Guide](docs/development/README.md): Guide for developers
+- [Project Status](docs/development/status.md): Current status and roadmap
 
-- **`config/`**  
-  - **`config.json`:** Arquivo de configuração (endpoints, parâmetros de trading, logging, etc).
+## Testing
 
-- **`checklist.md`:** Lista de pendências e próximos passos do projeto.
+The bot includes a test suite using pytest. To run the tests:
 
-## Checklist de Pendências
+```bash
+pytest
+```
 
-Consulte o arquivo [checklist.md](checklist.md) para um panorama completo de pendências, incluindo:
+## Security
 
-- Execução de ordens (ordens de venda, autenticação, dry-run, validação de saldo, etc).
-- Monitoramento de posições e SL/TP (módulo `monitor.py`, consulta de posições, ordens OCO).
-- Estratégia e parâmetros (centralização, ajuste dinâmico, cálculo de tamanho de ordem, backtesting).
-- CLI e usabilidade (interface, status em tempo real, tooltips).
-- Logging, monitoramento e segurança (métricas, alertas, backup, proteção de mnemonic, testes).
-- Documentação (centralização, exemplos reais, estrutura dos módulos).
-- Deploy e operação (scripts, execução contínua, manutenção).
+- **Authentication:** If the dYdX API requires authentication (mnemonic or private key), store it in a `.env` file (never in logs or code).
+- **Simulation Mode:** It's recommended to use simulation mode (`--simulation` flag) to avoid accidental orders in a real environment.
+- **Sensitive Data:** Ensure that sensitive data (mnemonic, keys) are never logged.
 
-## Segurança
+## Contributing
 
-- **Autenticação:**  
-  Se a API dYdX exigir autenticação (mnemonic ou chave privada), armazene-a em um arquivo `.env` (nunca em logs ou no código).  
-- **Modo Simulação (Dry-Run):**  
-  Recomenda-se implementar um parâmetro (ou flag) para ativar/desativar o modo simulação, evitando ordens acidentais em ambiente real.  
-- **Logs e Dados Sensíveis:**  
-  Garanta que dados sensíveis (mnemonic, chaves) nunca sejam registrados em logs.
+Contributions are welcome! Feel free to open issues or submit pull requests with improvements, fixes, or new features.
 
-## Documentação
+## License
 
-- **Endpoints e Parâmetros:**  
-  A documentação dos endpoints e parâmetros da API dYdX v4 deve ser centralizada (por exemplo, em um arquivo `docs/api.md`).  
-- **README:**  
-  Este README.md serve como guia inicial. Atualize-o com exemplos reais de uso, instruções de deploy e manutenção.  
-- **Estrutura de Arquivos:**  
-  Documente a função de cada módulo e a interação entre eles.
-
-## Testes
-
-- **Testes Unitários:**  
-  Implemente testes unitários (por exemplo, com `pytest`) para validar a lógica de cada módulo.  
-- **Testes de Integração:**  
-  Teste o fluxo completo (detecção de breakout, envio de ordem, monitoramento) em ambiente de testnet.
-
-## Deploy e Operação
-
-- **Scripts de Deploy:**  
-  Crie scripts (ou instruções) para automatizar o deploy em ambientes Linux/Windows.  
-- **Execução Contínua:**  
-  Utilize ferramentas como `systemd` (Linux) ou `tmux` (Windows) para manter o bot rodando continuamente.  
-- **Atualização e Manutenção:**  
-  Documente o processo de atualização (pull, atualizar dependências, reiniciar) e manutenção (logs, alertas).
-
-## Contato e Contribuições
-
-- **Issues e Pull Requests:**  
-  Sinta-se à vontade para abrir issues ou enviar pull requests com melhorias, correções ou novas funcionalidades.  
-- **Contato:**  
-  [Seu e-mail ou perfil de contato]
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
-**Observação:**  
-Este README.md é um guia inicial e deve ser atualizado conforme o projeto evolui.  
-Consulte o [checklist.md](checklist.md) para acompanhar as pendências e próximos passos. 
+**Note:**
+This README provides an overview of the project. For detailed information, please refer to the documentation in the `docs` directory.
