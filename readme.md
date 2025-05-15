@@ -1,171 +1,94 @@
-# dYdX v4 Trading Bot
+<div align="center">
+  <img src="logo.png" alt="dYdX Trading Bot Logo" width="300">
+</div>
 
-A modular, extensible trading bot for the dYdX v4 protocol (testnet), implementing a breakout strategy with volume confirmation.
+# Documentação do Bot de Trading dYdX v4
 
-## Overview
-
-This project implements an automated trading bot for dYdX v4 (testnet). The bot monitors the market, detects potential breakouts (based on price and volume anomalies), and executes buy orders via the REST API. The project follows a modular architecture and best development practices (logging, error handling, CLI, etc.).
-
-## Key Features
-
-- Real-time market data monitoring via WebSocket and REST API
-- Breakout trading strategy with volume confirmation
-- Risk management with configurable position sizing
-- Simulation mode for testing without placing real orders
-- Comprehensive logging and trade history
-- Modular architecture for easy extension
-
-## Requirements
-
-- Python 3.8 or higher
-- pip (package manager)
-- dYdX v4 testnet account
-- (Optional) Mnemonic for authentication (if required by the API)
-
-## Quick Start
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/dydx_automate.git
-   cd dydx_automate
-   ```
-
-2. **Create a virtual environment (recommended):**
-   - Windows:
-     ```bash
-     python -m venv venv
-     venv\Scripts\activate
-     ```
-   - Linux/macOS:
-     ```bash
-     python -m venv venv
-     source venv/bin/activate
-     ```
-
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Set up environment variables:**
-   ```bash
-   cp config/.env.example config/.env
-   ```
-   Edit `config/.env` and add your dYdX testnet mnemonic.
-
-5. **Run the setup command:**
-   ```bash
-   python cli.py setup
-   ```
-
-6. **Start the bot:**
-   ```bash
-   python cli.py start --simulation
-   ```
-
-## Project Structure
-
-The bot follows a modular architecture with clear separation of concerns:
-
-```
-dydx_automate/
-├── config/                 # Configuration files
-├── docs/                   # Documentation
-├── logs/                   # Log files
-├── src/                    # Source code
-│   ├── clients/            # API clients
-│   ├── core/               # Core functionality
-│   ├── models/             # Data models
-│   ├── strategies/         # Trading strategies
-│   └── utils/              # Utility functions
-├── tests/                  # Test suite
-├── cli.py                  # Command-line interface
-└── requirements.txt        # Dependencies
-```
-
-## Configuration
-
-The bot is configured using the `config/config.json` file. Example configuration:
-
-```json
-{
-  "trading": {
-    "market": "ETH-USD",
-    "timeframe": "5m",
-    "volume_factor": 2.5,
-    "risk_reward_ratio": 3.0
-  },
-  "risk": {
-    "max_position_size": 0.1,
-    "max_risk_per_trade": 0.02
-  },
-  "network": {
-    "endpoints": {
-      "rest": "https://dydx-testnet-rpc.polkachu.com",
-      "ws": "wss://dydx-testnet-rpc.polkachu.com/websocket"
-    }
-  },
-  "execution": {
-    "simulation_mode": true
-  }
-}
-```
-
-## Command-Line Interface
-
-The bot provides a command-line interface for easy control:
-
-```bash
-# Start the bot
-python cli.py start
-
-# Start with specific options
-python cli.py start --market ETH-USD --volume-factor 2.5 --simulation
-
-# Check market status
-python cli.py status ETH-USD
-
-# Show bot version
-python cli.py version
-
-# Set up the environment
-python cli.py setup
-```
-
-## Documentation
-
-Comprehensive documentation is available in the `docs` directory:
-
-- [Getting Started](docs/guides/getting-started.md): Quick start guide
-- [Configuration](docs/guides/configuration.md): Detailed configuration information
-- [Trading Strategies](docs/guides/strategies.md): Available trading strategies
-- [API Reference](docs/api/README.md): dYdX v4 API reference
-- [Development Guide](docs/development/README.md): Guide for developers
-- [Project Status](docs/development/status.md): Current status and roadmap
-
-## Testing
-
-The bot includes a test suite using pytest. To run the tests:
-
-```bash
-pytest
-```
-
-## Security
-
-- **Authentication:** If the dYdX API requires authentication (mnemonic or private key), store it in a `.env` file (never in logs or code).
-- **Simulation Mode:** It's recommended to use simulation mode (`--simulation` flag) to avoid accidental orders in a real environment.
-- **Sensitive Data:** Ensure that sensitive data (mnemonic, keys) are never logged.
-
-## Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests with improvements, fixes, or new features.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+Bem-vindo à documentação do Bot de Trading dYdX v4. Esta documentação fornece informações completas sobre a arquitetura, configuração, uso e desenvolvimento do bot.
 
 ---
 
-**Note:**
-This README provides an overview of the project. For detailed information, please refer to the documentation in the `docs` directory.
+## 📋 Como Usar o Bot de Trading dYdX
+
+O bot de trading dYdX é uma ferramenta automatizada para monitorar e executar operações no mercado de criptomoedas dYdX v4. Abaixo estão as instruções para executar o bot:
+
+### Requisitos
+* Python instalado
+* Dependências instaladas (execute `pip install -r requirements.txt`)
+* Conta na dYdX v4 configurada
+
+### 🚀 Executando o Bot
+
+Para iniciar o bot, use o seguinte comando no terminal:
+
+```bash
+python bot.py --market [PAR-DE-MOEDAS] --timeframe [PERÍODO] --update-interval [SEGUNDOS] --position-size [VALOR]
+```
+
+**Parâmetros:**
+* `--market`: Par de moedas para operar (ex: ETH-USD, BTC-USD)
+* `--timeframe`: Período do gráfico (ex: 1MIN, 5MIN, 15MIN, 1H)
+* `--update-interval`: Intervalo em segundos para atualização dos dados (ex: 30)
+* `--position-size`: Tamanho da posição em dólares (ex: 100)
+
+**Exemplo:**
+```bash
+python bot.py --market ETH-USD --timeframe 1MIN --update-interval 30 --position-size 100
+```
+
+### 💡 Funcionamento
+O bot monitora o mercado em busca de oportunidades de breakout (rompimento) com confirmação de volume. Quando identifica uma oportunidade, executa automaticamente a operação de acordo com os parâmetros configurados.
+
+### 📊 Monitoramento
+Durante a execução, o bot exibe informações como:
+* Nível de resistência atual
+* Volume médio
+* Preço atual
+* Oportunidades de trading identificadas
+
+Para interromper o bot, pressione `Ctrl+C` no terminal.
+
+### ⚙️ Parâmetros Avançados
+Além dos parâmetros básicos, o bot utiliza os seguintes parâmetros avançados que podem ser configurados:
+
+* **Fator de Volume**: Fator multiplicador para confirmação de volume (padrão: 2.0)
+* **Períodos de Resistência**: Número de períodos para cálculo de resistência (padrão: 24)
+* **Relação Risco:Recompensa**: Relação risco/recompensa para definição de alvos e stop loss (padrão: 3.0)
+
+Estes parâmetros podem ser modificados no arquivo de configuração ou através de argumentos adicionais na linha de comando.
+
+---
+
+## 📚 Estrutura da Documentação
+
+* **[Primeiros Passos](guides/getting-started.md)**: Guia rápido para configurar e executar o bot
+* **[Configuração](guides/configuration.md)**: Informações detalhadas sobre a configuração do bot
+* **[Estratégias de Trading](guides/strategies.md)**: Documentação das estratégias de trading disponíveis
+* **[Referência da API](api/README.md)**: Documentação de referência para a API dYdX v4
+* **[Guia de Desenvolvimento](development/README.md)**: Guia para desenvolvedores que desejam estender ou modificar o bot
+* **[Status do Projeto](development/status.md)**: Status atual do projeto e roadmap
+
+---
+
+## ✨ Principais Recursos
+
+* 📡 Monitoramento de dados de mercado em tempo real via WebSocket e API REST
+* 📈 Estratégia de trading de breakout com confirmação de volume
+* 🛡️ Gerenciamento de risco com dimensionamento configurável de posições
+* 🧪 Modo de simulação para testes sem colocar ordens reais
+* 📝 Registro abrangente e histórico de negociações
+* 🧩 Arquitetura modular para fácil extensão
+
+---
+
+## 🔗 Links Rápidos
+
+* [Repositório do Projeto](https://github.com/yourusername/dydx_automate)
+* [Documentação Oficial dYdX v4](https://docs.dydx.exchange/)
+* [Rastreador de Problemas](https://github.com/yourusername/dydx_automate/issues)
+
+---
+
+## 👥 Contribuindo
+
+Contribuições são bem-vindas! Consulte o [Guia de Desenvolvimento](development/README.md) para obter informações sobre como contribuir para o projeto.

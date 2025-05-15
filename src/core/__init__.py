@@ -1,3 +1,0 @@
-"""
-Core bot functionality modules.
-"""

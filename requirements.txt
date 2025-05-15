@@ -1,14 +1,4 @@
-# Dependências principais
-python-dotenv>=1.0.0    # Para gerenciar variáveis de ambiente
-click>=8.1.7           # Para interface CLI
-websockets>=12.0       # Para conexão WebSocket
-pandas>=2.1.1          # Para análise de dados
-numpy>=1.26.0          # Para cálculos numéricos
-pytest>=7.4.2          # Para testes
-python-dateutil>=2.8.2 # Para manipulação de datas
-aiohttp>=3.8.1         # Para requisições HTTP assíncronas
-asyncio>=3.4.3         # Para programação assíncrona
-certifi>=2024.2.2      # Para certificados SSL
-grpcio>=1.60.0         # Para comunicação gRPC
-grpcio-tools>=1.60.0   # Para geração de código gRPC
-protobuf>=4.25.1       # Para serialização Protocol Buffers
+requests==2.31.0
+pandas==2.1.0
+numpy==1.26.0
+python-dotenv==1.0.0

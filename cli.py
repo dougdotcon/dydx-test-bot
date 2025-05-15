@@ -1,261 +1,206 @@
-#!/usr/bin/env python3
 """
-Command-line interface for the dYdX v4 trading bot.
+Command-line interface for the dYdX trading bot.
 """
-
-import click
-import asyncio
 import logging
-import json
+import click
+import time
 import os
-from pathlib import Path
+from typing import Dict, Optional
 
-from src.core.bot import TradingBot
-from src.utils.config import load_config, save_config, load_env
-from src.utils.logging import setup_logging
+import config
+from auth import create_client, get_account_info
+from market_data import MarketData
+from strategy import BreakoutStrategy
+from order_manager import OrderManager
+
+# Configure logging
+logging.basicConfig(
+    level=getattr(logging, config.LOG_LEVEL),
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(config.LOG_FILE),
+        logging.StreamHandler()
+    ]
+)
+
+logger = logging.getLogger(__name__)
 
 @click.group()
 def cli():
-    """dYdX v4 Trading Bot - Breakout Strategy with Volume Confirmation"""
+    """dYdX Trading Bot - Breakout Strategy with Volume Confirmation"""
     pass
 
 @cli.command()
-@click.option(
-    '--market',
-    default=None,
-    help='Trading pair (e.g., ETH-USD)'
-)
-@click.option(
-    '--timeframe',
-    default=None,
-    help='Analysis timeframe (e.g., 5m)'
-)
-@click.option(
-    '--volume-factor',
-    default=None,
-    type=float,
-    help='Volume anomaly detection factor'
-)
-@click.option(
-    '--simulation',
-    is_flag=True,
-    help='Run in simulation mode (no real orders)'
-)
-@click.option(
-    '--config',
-    default='config/config.json',
-    help='Path to configuration file'
-)
-def start(market, timeframe, volume_factor, simulation, config):
-    """Start the trading bot"""
+@click.option('--market', default=config.DEFAULT_MARKET, help='Market symbol (e.g., "ETH-USD")')
+@click.option('--timeframe', default=config.DEFAULT_TIMEFRAME, help='Candle timeframe (e.g., "5m")')
+@click.option('--volume-factor', default=config.DEFAULT_VOLUME_FACTOR, type=float, 
+              help='Volume factor for breakout confirmation')
+@click.option('--resistance-periods', default=config.DEFAULT_RESISTANCE_PERIODS, type=int,
+              help='Number of periods to look back for resistance')
+@click.option('--risk-reward', default=config.DEFAULT_RISK_REWARD_RATIO, type=float,
+              help='Risk-to-reward ratio for take profit calculation')
+@click.option('--position-size', default=config.DEFAULT_POSITION_SIZE_USD, type=float,
+              help='Position size in USD')
+@click.option('--simulation/--live', default=True, help='Simulation mode (no real orders)')
+def start(market, timeframe, volume_factor, resistance_periods, risk_reward, position_size, simulation):
+    """Start the trading bot with the specified parameters."""
+    logger.info("Starting dYdX Trading Bot...")
+    logger.info(f"Parameters: Market={market}, Timeframe={timeframe}, Volume Factor={volume_factor}, "
+               f"Resistance Periods={resistance_periods}, Risk:Reward={risk_reward}, "
+               f"Position Size=${position_size}, Simulation={simulation}")
+    
+    # Create dYdX client
+    client = create_client()
+    if not client:
+        logger.error("Failed to create dYdX client. Exiting.")
+        return
+    
+    # Get account info
+    account_info = get_account_info(client)
+    logger.info(f"Account info: {account_info}")
+    
+    # Initialize market data collector
+    market_data = MarketData(client, market=market, timeframe=timeframe)
+    
+    # Initialize strategy
+    strategy = BreakoutStrategy(
+        market_data=market_data,
+        volume_factor=volume_factor,
+        resistance_periods=resistance_periods,
+        risk_reward_ratio=risk_reward
+    )
+    
+    # Initialize order manager
+    order_manager = OrderManager(
+        client=client,
+        market=market,
+        position_size_usd=position_size,
+        simulation_mode=simulation
+    )
+    
+    # Start WebSocket for real-time data
+    market_data.start_websocket()
+    
     try:
-        # Check if config file exists
-        if not Path(config).exists():
-            click.echo(f"Error: Configuration file not found: {config}")
-            return
-
-        # Set up logging
-        setup_logging()
-
-        # Update configuration with CLI parameters
-        if any([market, timeframe, volume_factor, simulation]):
-            config_data = load_config(config)
-
-            if market:
-                config_data['trading']['market'] = market
-
-            if timeframe:
-                config_data['trading']['timeframe'] = timeframe
-
-            if volume_factor:
-                config_data['trading']['volume_factor'] = volume_factor
-
-            if simulation:
-                if 'execution' not in config_data:
-                    config_data['execution'] = {}
-                config_data['execution']['simulation_mode'] = True
-
-            # Save updated configuration
-            save_config(config_data, config)
-
-        click.echo("Starting trading bot...")
-
-        # Start the bot
-        bot = TradingBot(config)
-        asyncio.run(bot.start())
-
-    except KeyboardInterrupt:
-        click.echo("\nBot interrupted by user")
-    except Exception as e:
-        click.echo(f"Error starting bot: {e}")
-        raise
-
-@cli.command()
-@click.argument('market')
-@click.option(
-    '--config',
-    default='config/config.json',
-    help='Path to configuration file'
-)
-def status(market, config):
-    """Check status of a specific market"""
-    try:
-        # Load configuration
-        config_data = load_config(config)
-
-        # Set up logging
-        setup_logging()
-
-        click.echo(f"\nMarket Status: {market}")
-        click.echo("-" * 40)
-
-        # Create a temporary bot instance to check market data
-        async def check_market():
-            # Initialize bot components
-            from src.core.market_data import MarketDataService
-
-            # Override market in config
-            config_data['trading']['market'] = market
-
-            # Initialize market data service
-            market_data = MarketDataService(config_data)
-            await market_data.connect()
-
-            try:
-                # Load initial data
-                await market_data._load_initial_data()
-
-                # Get current price
-                current_price = market_data.get_current_price()
-
-                if current_price:
-                    click.echo(f"Current Price: {current_price}")
-
-                    # Calculate technical indicators
-                    volume_anomaly = market_data.calculate_volume_anomaly()
-                    resistance = market_data.calculate_resistance()
-
-                    if volume_anomaly:
-                        click.echo(f"Volume Anomaly: {volume_anomaly:.2f}x average")
-
-                    if resistance:
-                        click.echo(f"Resistance Level: {resistance}")
-
-                    # Show market data
-                    click.echo(f"\nData Points: {len(market_data.prices)}")
-
-                else:
-                    click.echo("No price data available")
-            finally:
-                # Close connections
-                await market_data.close()
-
-        # Run the async function
-        asyncio.run(check_market())
-
-    except Exception as e:
-        click.echo(f"Error checking market status: {e}")
-
-@cli.command()
-def version():
-    """Show bot version"""
-    click.echo("dYdX Trading Bot v1.0.0")
-
-@cli.command()
-@click.option('--check', is_flag=True, help='Only check configuration without setup')
-def setup(check):
-    """Configure or verify the bot environment"""
-    try:
-        # Load environment variables
-        try:
-            load_env()
-        except FileNotFoundError:
-            pass  # We'll check for this file below
-
-        # Check required files
-        files_to_check = [
-            ('config/config.json', 'Configuration file'),
-            ('config/.env', 'Environment variables file'),
-            ('requirements.txt', 'Dependencies file')
-        ]
-
-        click.echo("\nChecking environment...")
-        all_ok = True
-
-        for file_path, description in files_to_check:
-            exists = Path(file_path).exists()
-            status = '✓' if exists else '✗'
-            click.echo(f"{status} {description}: {file_path}")
-            if not exists and file_path == 'config/.env':
-                if Path('config/.env.example').exists():
-                    click.echo("  → Copy .env.example to .env and configure your credentials")
-                all_ok = False
-
-        # Check required environment variables
-        if Path('config/.env').exists():
-            required_env = ['DYDX_TEST_MNEMONIC']
-            missing_env = [env for env in required_env if not os.getenv(env)]
-            if missing_env:
-                all_ok = False
-                click.echo("\nMissing environment variables:")
-                for env in missing_env:
-                    click.echo(f"✗ {env}")
-
-        # Check directory structure
-        directories_to_check = [
-            ('src/clients', 'API clients directory'),
-            ('src/core', 'Core modules directory'),
-            ('src/strategies', 'Trading strategies directory'),
-            ('src/models', 'Data models directory'),
-            ('src/utils', 'Utilities directory'),
-            ('tests', 'Tests directory'),
-            ('logs', 'Logs directory')
-        ]
-
-        click.echo("\nChecking directory structure...")
-        for dir_path, description in directories_to_check:
-            exists = Path(dir_path).exists()
-            status = '✓' if exists else '✗'
-            click.echo(f"{status} {description}: {dir_path}")
-            if not exists:
-                all_ok = False
-
-        if check:
-            if all_ok:
-                click.echo("\nAll checks passed successfully!")
+        # Initial market data update
+        strategy.update_market_data()
+        
+        logger.info(f"Bot started successfully. Monitoring {market} for breakout opportunities...")
+        logger.info(f"Initial resistance level: {strategy.resistance_level:.2f}, "
+                   f"Average volume: {strategy.average_volume:.2f}")
+        
+        # Main loop
+        while True:
+            # Check for exit conditions if there's an active position
+            if order_manager.active_position:
+                exit_reason = order_manager.check_exit_conditions()
+                if exit_reason:
+                    closed_position = order_manager.close_position(exit_reason)
+                    logger.info(f"Position closed: {closed_position}")
+                    
+                    # Wait before looking for new opportunities
+                    logger.info("Waiting 5 minutes before looking for new opportunities...")
+                    time.sleep(300)  # 5 minutes
+                    
+                    # Update market data after waiting
+                    strategy.update_market_data()
+            
+            # If no active position, look for new opportunities
             else:
-                click.echo("\nSome checks failed. Fix the issues before starting the bot.")
-            return
-
-        # If not just checking, continue with setup
-        if not all_ok:
-            if not click.confirm("\nDo you want to continue with setup?", default=True):
-                return
-
-        click.echo("\nPerforming setup...")
-
-        # Create missing directories
-        for dir_path, description in directories_to_check:
-            if not Path(dir_path).exists():
-                Path(dir_path).mkdir(parents=True, exist_ok=True)
-                click.echo(f"Created directory: {dir_path}")
-
-        # Create .env file from example if it doesn't exist
-        if not Path('config/.env').exists() and Path('config/.env.example').exists():
-            if click.confirm("Create .env file from .env.example?", default=True):
-                with open('config/.env.example', 'r') as example_file:
-                    example_content = example_file.read()
-
-                with open('config/.env', 'w') as env_file:
-                    env_file.write(example_content)
-
-                click.echo("Created .env file. Please edit it with your credentials.")
-
-        click.echo("\nSetup completed. You may need to install dependencies:")
-        click.echo("pip install -r requirements.txt")
-
+                # Update market data every minute
+                strategy.update_market_data()
+                
+                # Check for breakout signal
+                signal, signal_details = strategy.check_breakout_signal()
+                
+                if signal:
+                    # Calculate entry, stop loss, and take profit levels
+                    current_price = signal_details["current_price"]
+                    levels = strategy.calculate_entry_exit_levels(current_price)
+                    
+                    # Open long position
+                    position = order_manager.open_long_position(
+                        entry_price=levels["entry_price"],
+                        stop_loss=levels["stop_loss"],
+                        take_profit=levels["take_profit"]
+                    )
+                    
+                    logger.info(f"Opened position: {position}")
+            
+            # Sleep for a short time before next iteration
+            time.sleep(10)
+    
+    except KeyboardInterrupt:
+        logger.info("Bot stopped by user.")
     except Exception as e:
-        click.echo(f"Error during setup: {e}")
+        logger.error(f"Error in main loop: {str(e)}", exc_info=True)
+    finally:
+        # Clean up
+        market_data.stop_websocket()
+        
+        # Close any open positions
+        if order_manager.active_position:
+            logger.info("Closing active position before exit...")
+            order_manager.close_position("bot_shutdown")
+        
+        logger.info("Bot shutdown complete.")
+
+@cli.command()
+def setup():
+    """Setup the bot configuration."""
+    click.echo("Setting up dYdX Trading Bot...")
+    
+    # Check if .env file exists
+    if os.path.exists(".env"):
+        overwrite = click.confirm("Configuration file already exists. Overwrite?", default=False)
+        if not overwrite:
+            click.echo("Setup cancelled.")
+            return
+    
+    # Get mnemonic
+    mnemonic = click.prompt("Enter your dYdX mnemonic (24 words)", hide_input=True)
+    
+    # Create .env file
+    with open(".env", "w") as f:
+        f.write(f"DYDX_MNEMONIC={mnemonic}\n")
+    
+    click.echo("Configuration saved to .env file.")
+    click.echo("IMPORTANT: Keep your mnemonic secure and never share it with anyone!")
+
+@cli.command()
+def status():
+    """Check the status of the bot and account."""
+    click.echo("Checking dYdX Trading Bot status...")
+    
+    # Create dYdX client
+    client = create_client()
+    if not client:
+        click.echo("Failed to create dYdX client. Check your configuration.")
+        return
+    
+    # Get account info
+    account_info = get_account_info(client)
+    
+    click.echo("\n=== Account Information ===")
+    if "balance" in account_info:
+        click.echo(f"Balance: {account_info['balance']} USDC")
+    
+    # Get positions
+    order_manager = OrderManager(client, simulation_mode=False)
+    positions = order_manager.get_positions()
+    
+    click.echo("\n=== Open Positions ===")
+    if positions:
+        for pos in positions:
+            click.echo(f"Market: {pos.get('market')}")
+            click.echo(f"Side: {pos.get('side')}")
+            click.echo(f"Size: {pos.get('size')}")
+            click.echo(f"Entry Price: {pos.get('entry_price')}")
+            click.echo("---")
+    else:
+        click.echo("No open positions.")
+    
+    click.echo("\nStatus check complete.")
 
 if __name__ == '__main__':
     cli()
