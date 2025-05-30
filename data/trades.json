@@ -1,0 +1,80 @@
+[
+  {
+    "market": "ETH-USD",
+    "side": "LONG",
+    "entry_price": 2000.0,
+    "exit_price": 2100.0,
+    "size": 0.1,
+    "pnl": 10.0,
+    "pnl_percent": 5.0,
+    "status": "CLOSED",
+    "exit_reason": "take_profit",
+    "timestamp": "2025-05-30T03:54:46.374600"
+  },
+  {
+    "market": "ETH-USD",
+    "side": "LONG",
+    "entry_price": 2000.0,
+    "exit_price": 2100.0,
+    "size": 0.1,
+    "pnl": 10.0,
+    "pnl_percent": 5.0,
+    "status": "CLOSED",
+    "exit_reason": "take_profit",
+    "timestamp": "2025-05-30T03:55:05.112240"
+  },
+  {
+    "market": "ETH-USD",
+    "side": "LONG",
+    "entry_price": 2000.0,
+    "exit_price": 2100.0,
+    "size": 0.1,
+    "pnl": 10.0,
+    "pnl_percent": 5.0,
+    "status": "CLOSED",
+    "exit_reason": "take_profit",
+    "timestamp": "2025-05-30T03:56:51.155775"
+  },
+  {
+    "market": "ETH-USD",
+    "side": "LONG",
+    "entry_price": 2000.0,
+    "exit_price": 2100.0,
+    "size": 0.1,
+    "pnl": 10.0,
+    "pnl_percent": 5.0,
+    "status": "CLOSED",
+    "exit_reason": "take_profit",
+    "timestamp": "2025-05-30T03:57:46.165706"
+  },
+  {
+    "market": "ETH-USD",
+    "side": "LONG",
+    "entry_price": 2000.0,
+    "exit_price": 2100.0,
+    "size": 0.1,
+    "pnl": 10.0,
+    "pnl_percent": 5.0,
+    "status": "CLOSED",
+    "exit_reason": "take_profit",
+    "timestamp": "2025-05-30T04:03:51.728970"
+  },
+  {
+    "market": "ETH-USD",
+    "side": "LONG",
+    "entry_price": 1896.2,
+    "size": 0.0527,
+    "stop_loss": 1801.3899999999999,
+    "take_profit": 2085.82,
+    "status": "CLOSED",
+    "order_id": "sim_1748588691",
+    "opened_at": 1748588691.7968025,
+    "timestamp": "2025-05-30T04:04:51.796802",
+    "exit_price": 1896.2,
+    "exit_reason": "manual_close",
+    "pnl": 0.0,
+    "pnl_percent": 0.0,
+    "closed_at": 1748588691.797802,
+    "duration": 0.00099945068359375
+  }
+]

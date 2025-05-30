@@ -1,0 +1,19 @@
+2025-05-30 04:08:02,695 - src.cli.cli - INFO - Starting dYdX Trading Bot...
+2025-05-30 04:08:02,695 - src.cli.cli - INFO - Parameters: Market=ETH-USD, Timeframe=5m, Volume Factor=2.0, Resistance Periods=24, Risk:Reward=3.0, Position Size=$100.0, Simulation=True
+2025-05-30 04:08:02,695 - src.core.dydx_client - INFO - Running in simulation mode - no actual dYdX connection
+2025-05-30 04:08:02,696 - src.core.auth - INFO - dYdX client created successfully (simulation_mode=True)
+2025-05-30 04:08:02,696 - src.core.auth - INFO - Successfully retrieved account information
+2025-05-30 04:08:02,696 - src.cli.cli - INFO - Account info: {'address': 'dydx1mock_address_for_simulation', 'subaccountNumber': 0, 'equity': '10000.0', 'freeCollateral': '8000.0', 'totalTradingRewards': '0.0'}
+2025-05-30 04:08:02,699 - src.core.market_data - INFO - Started WebSocket connection for ETH-USD
+2025-05-30 04:08:02,707 - src.core.market_data - INFO - Fetched 100 candles for ETH-USD
+2025-05-30 04:08:02,715 - src.strategies.strategy - INFO - Updated indicators - Resistance: 2090.40, Avg Volume: 215.00
+2025-05-30 04:08:02,716 - src.cli.cli - INFO - Bot started successfully. Monitoring ETH-USD for breakout opportunities...
+2025-05-30 04:08:02,719 - src.cli.cli - INFO - Initial resistance level: 2090.40, Average volume: 215.00
+2025-05-30 04:08:02,734 - src.core.market_data - INFO - Fetched 100 candles for ETH-USD
+2025-05-30 04:08:02,736 - src.strategies.strategy - INFO - Updated indicators - Resistance: 2090.40, Avg Volume: 215.00
+2025-05-30 04:08:03,685 - websocket - INFO - Websocket connected
+2025-05-30 04:08:03,686 - src.core.market_data - INFO - WebSocket connection opened
+2025-05-30 04:08:12,752 - src.core.market_data - INFO - Fetched 100 candles for ETH-USD
+2025-05-30 04:08:12,753 - src.strategies.strategy - INFO - Updated indicators - Resistance: 2090.40, Avg Volume: 215.00
+2025-05-30 04:08:22,812 - src.core.market_data - INFO - Fetched 100 candles for ETH-USD
+2025-05-30 04:08:22,853 - src.strategies.strategy - INFO - Updated indicators - Resistance: 2090.40, Avg Volume: 215.00

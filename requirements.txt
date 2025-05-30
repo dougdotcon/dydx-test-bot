@@ -1,4 +1,18 @@
+# Core dependencies
 requests==2.31.0
 pandas==2.1.0
 numpy==1.26.0
 python-dotenv==1.0.0
+
+# dYdX v4 SDK
+dydx-v4-client==1.1.4
+
+# CLI interface
+click==8.1.7
+
+# WebSocket support
+websocket-client==1.6.4
+
+# Additional utilities
+python-dateutil==2.8.2
+pytz==2023.3

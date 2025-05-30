@@ -9,13 +9,13 @@ import websocket
 import json
 import threading
 
-from dydx_v4_python.clients import CompositeClient
-import config
+from .dydx_client import DydxClientWrapper
+from . import config
 
 logger = logging.getLogger(__name__)
 
 class MarketData:
-    def __init__(self, client: CompositeClient, market: str = config.DEFAULT_MARKET,
+    def __init__(self, client: DydxClientWrapper, market: str = config.DEFAULT_MARKET,
                  timeframe: str = config.DEFAULT_TIMEFRAME):
         """
         Initialize the market data collector.
@@ -45,18 +45,25 @@ class MarketData:
             DataFrame: Candle data with columns [timestamp, open, high, low, close, volume]
         """
         try:
-            # Convert timeframe to seconds for API
-            resolution = self._timeframe_to_seconds(self.timeframe)
-
-            # Fetch candles from dYdX API
-            candles_data = self.client.get_candles(
+            # Fetch candles from dYdX API using wrapper
+            candles_response = self.client.get_candles(
                 market=self.market,
-                resolution=resolution,
+                timeframe=self.timeframe,
                 limit=limit
             )
 
+            if not candles_response or 'candles' not in candles_response:
+                logger.warning(f"No candles data received for {self.market}")
+                return pd.DataFrame()
+
+            candles_data = candles_response['candles']
+
             # Convert to DataFrame
             df = pd.DataFrame(candles_data)
+
+            if df.empty:
+                logger.warning(f"Empty candles data for {self.market}")
+                return df
 
             # Rename and convert columns
             df = df.rename(columns={
@@ -70,7 +77,8 @@ class MarketData:
 
             # Convert types
             for col in ['open', 'high', 'low', 'close', 'volume']:
-                df[col] = pd.to_numeric(df[col])
+                if col in df.columns:
+                    df[col] = pd.to_numeric(df[col])
 
             # Sort by timestamp
             df = df.sort_values('timestamp')
@@ -91,9 +99,26 @@ class MarketData:
             float: Latest price
         """
         try:
-            ticker = self.client.get_ticker(market=self.market)
-            self.latest_price = float(ticker['price'])
+            # Try to get latest price from recent candles
+            if not self.candles.empty:
+                self.latest_price = float(self.candles.iloc[-1]['close'])
+                return self.latest_price
+
+            # If no candles, fetch fresh data
+            candles_response = self.client.get_candles(
+                market=self.market,
+                timeframe=self.timeframe,
+                limit=1
+            )
+
+            if candles_response and 'candles' in candles_response and candles_response['candles']:
+                latest_candle = candles_response['candles'][0]
+                self.latest_price = float(latest_candle['close'])
+                return self.latest_price
+
+            logger.warning(f"Could not get latest price for {self.market}")
             return self.latest_price
+
         except Exception as e:
             logger.error(f"Failed to get latest price: {str(e)}")
             return self.latest_price

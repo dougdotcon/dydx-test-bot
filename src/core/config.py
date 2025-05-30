@@ -31,4 +31,4 @@ DEFAULT_POSITION_SIZE_USD = 100  # Position size in USD
 
 # Logging
 LOG_LEVEL = "INFO"
-LOG_FILE = "dydx_bot.log"
+LOG_FILE = os.path.join(os.path.dirname(__file__), "..", "..", "logs", "dydx_bot.log")

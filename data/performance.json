@@ -1,0 +1,13 @@
+{
+  "total_trades": 5,
+  "total_pnl": 50.0,
+  "win_rate": 100.0,
+  "avg_win": 10.0,
+  "avg_loss": 0,
+  "profit_factor": Infinity,
+  "max_drawdown": 0,
+  "gross_profit": 50.0,
+  "gross_loss": 0,
+  "winning_trades": 5,
+  "losing_trades": 0
+}
